@@ -1,0 +1,22 @@
+{
+  "workbench.colorTheme": "Solarized Lights Off",
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "workbench.editor.showTabs": "single",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "workbench.tree.indent": 20,
+  "editor.guides.indentation": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.quickSuggestions": {
+    "other": "off"
+  },
+  "editor.quickSuggestionsDelay": 500,
+  "editor.parameterHints.enabled": false,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 14,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}
