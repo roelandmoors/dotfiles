@@ -17,6 +17,7 @@ https://www.nerdfonts.com/font-downloads
 ### iTerm2
 
 Font: FiraMono Nerd Font Mono  
+Colors: Import export/roeland.itermcolors
 
 ### Open in terminal
 
