@@ -7,7 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'lifepillar/vim-colortemplate'
-Plug 'roelandxyz/vim-focus'
+Plug 'roelandmoors/vim-focus'
 call plug#end()
 
 
