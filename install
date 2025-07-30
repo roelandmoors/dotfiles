@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ln -i -s $(pwd)/vimrc ~/.vimrc
+ln -i -s $(pwd)/XCompose ~/.XCompose
+ln -i -s $(pwd)/xsessionrc ~/.xsessionrc
+ln -i -s $(pwd)/gitconfig ~/.gitconfig
