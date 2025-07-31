@@ -1,5 +1,9 @@
 #!/bin/bash
 
+xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom -Rr
+xfconf-query -c xfce4-panels -p /panels -Rr
+xfconf-query -c xfce4-panels -p /plugins -Rr
+
 channels="displays keyboard-layout keyboards pointers ristretto thunar thunar-volman \
 xfce4-appfinder xfce4-desktop xfce4-keyboard-shortcuts xfce4-notifyd xfce4-panel \
 xfce4-power-manager xfce4-screensaver xfce4-session xfce4-settings-editor \
