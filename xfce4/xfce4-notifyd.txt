@@ -1,0 +1,8 @@
+/applications/known_applications  [brave-browser,chromium,com.nextcloud.desktopclient.nextcloud,Dropbox,Firefox,org.freedesktop.network-manager-applet,Spotify,Xfce volume control,Xfce4-notifyd settings,xfce4-power-manager,xfce4-settings-helper]
+/date-time-custom-format          %a %H:%M:%S
+/do-fadeout                       false
+/expire-timeout                   5
+/initial-opacity                  0.780000
+/log-max-size-enabled             true
+/notify-location                  bottom-right
+/theme                            Default

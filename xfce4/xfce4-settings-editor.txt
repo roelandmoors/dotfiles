@@ -1,0 +1,3 @@
+/last/paned-position  180
+/last/window-height   607
+/last/window-width    830

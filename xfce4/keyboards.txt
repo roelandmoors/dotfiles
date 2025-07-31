@@ -1,0 +1,3 @@
+/Default/KeyRepeat/Delay  242
+/Default/KeyRepeat/Rate   40
+/Default/Numlock          false

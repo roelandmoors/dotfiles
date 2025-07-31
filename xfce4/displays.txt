@@ -1,0 +1,17 @@
+/ActiveProfile                      Default
+/AutoEnableProfiles                 3
+/Default/DisplayPort-2              Philips 34"
+/Default/DisplayPort-2/Active       true
+/Default/DisplayPort-2/EDID         1664de493fdadcc78a74c10b083e96d481d4693b
+/Default/DisplayPort-2/Position/X   0
+/Default/DisplayPort-2/Position/Y   0
+/Default/DisplayPort-2/Primary      false
+/Default/DisplayPort-2/Reflection   0
+/Default/DisplayPort-2/RefreshRate  59.972616
+/Default/DisplayPort-2/Resolution   3440x1440
+/Default/DisplayPort-2/Rotation     0
+/Default/DisplayPort-2/Scale        2.000000
+/Default/eDP                        Laptop
+/Default/eDP/Active                 false
+/Default/eDP/EDID                   13c7ca46059da423bd4b648554073722efcee642
+/Notify                             1

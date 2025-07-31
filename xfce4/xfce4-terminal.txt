@@ -1,0 +1,25 @@
+/background-darkness            0.620000
+/background-mode                TERMINAL_BACKGROUND_SOLID
+/color-background               #000000
+/color-background-vary          false
+/color-bold                     
+/color-bold-is-bright           true
+/color-bold-use-default         true
+/color-cursor                   
+/color-cursor-foreground        
+/color-cursor-use-default       true
+/color-foreground               #ffffff
+/color-palette                  #000000;#cc0000;#4e9a06;#c4a000;#3465a4;#75507b;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#739fcf;#ad7fa8;#34e2e2;#eeeeec
+/color-selection                
+/color-selection-background     
+/color-selection-use-default    true
+/color-use-theme                false
+/font-name                      JetBrainsMonoNL Nerd Font Mono 12
+/misc-borders-default           false
+/misc-copy-on-select            true
+/misc-default-geometry          120x40
+/misc-menubar-default           false
+/misc-show-unsafe-paste-dialog  false
+/scrolling-bar                  TERMINAL_SCROLLBAR_NONE
+/shortcuts-no-menukey           true
+/tab-activity-color             #aa0000

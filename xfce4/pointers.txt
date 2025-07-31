@@ -1,0 +1,14 @@
+/PIXA385400_093A0274_Mouse/Properties/libinput_High_Resolution_Wheel_Scroll_Enabled  1
+/PIXA385400_093A0274_Touchpad/Acceleration                                           5.000000
+/PIXA385400_093A0274_Touchpad/Properties/libinput_Accel_Profile_Enabled              [1,0,0]
+/PIXA385400_093A0274_Touchpad/Properties/libinput_Click_Method_Enabled               [0,1]
+/PIXA385400_093A0274_Touchpad/Properties/libinput_Disable_While_Typing_Enabled       1
+/PIXA385400_093A0274_Touchpad/Properties/libinput_Scroll_Method_Enabled              [1,0,0]
+/PIXA385400_093A0274_Touchpad/Properties/libinput_Tapping_Enabled                    1
+/PIXA385400_093A0274_Touchpad/Properties/Synaptics_Circular_Scrolling                0
+/PIXA385400_093A0274_Touchpad/Properties/Synaptics_Circular_Scrolling_Trigger        0
+/PIXA385400_093A0274_Touchpad/Properties/Synaptics_Edge_Scrolling                    [0,0,0]
+/PIXA385400_093A0274_Touchpad/Properties/Synaptics_Two-Finger_Scrolling              [1,0]
+/PIXA385400_093A0274_Touchpad/ReverseScrolling                                       false
+/PIXA385400_093A0274_Touchpad/RightHanded                                            true
+/PIXA385400_093A0274_Touchpad/Threshold                                              1
