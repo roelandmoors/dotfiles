@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#while read line
+#do
+#	xfconf-query -c xfce4-keyboard-shortcuts -p "$(echo $line | awk '{print $1}')" -s "$(echo $line | awk '{print $2}')" -n
+#done < backup.txt
