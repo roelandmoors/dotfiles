@@ -9,6 +9,19 @@ xfce4-appfinder xfce4-desktop xfce4-keyboard-shortcuts xfce4-notifyd xfce4-panel
 xfce4-power-manager xfce4-screensaver xfce4-session xfce4-settings-editor \
 xfce4-settings-manager xfce4-taskmanager xfce4-terminal xfwm4 xsettings"
 
+detect_type() {
+    local val="$1"
+    if [[ "$val" =~ ^(true|false)$ ]]; then
+        echo "bool"
+    elif [[ "$val" =~ ^-?[0-9]+$ ]]; then
+        echo "int"
+    elif [[ "$val" =~ ^-?[0-9]*\.[0-9]+$ ]]; then
+        echo "double"
+    else
+        echo "string"
+    fi
+}
+
 for channel in $channels; do
     config_file="$channel.txt"
     if [ -f "$config_file" ]; then
@@ -31,31 +44,13 @@ for channel in $channels; do
                 args=()
                 for element in "${elements[@]}"; do
                     element=$(echo "$element" | xargs)  # trim
-                    if echo "$element" | grep -Eq '^(true|false)$'; then
-                        vtype="bool"
-                    elif echo "$element" | grep -Eq '^-?[0-9]+$'; then
-                        vtype="int"
-                    elif echo "$element" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
-                        vtype="double"
-                    else
-                        vtype="string"
-                    fi
+                    vtype=$(detect_type "$element")
                     args+=("-t" "$vtype" "-s" "$element")
                 done
 
                 xfconf-query -c "$channel" -p "$prop" -a -n "${args[@]}"
             else
-                # Single value detection
-                if echo "$value" | grep -Eq '^(true|false)$'; then
-                    vtype="bool"
-                elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
-                    vtype="int"
-                elif echo "$value" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
-                    vtype="double"
-                else
-                    vtype="string"
-                fi
-
+                vtype=$(detect_type "$value")
                 xfconf-query -c "$channel" -p "$prop" -t "$vtype" -s "$value" -n
             fi
         done < "$config_file"
