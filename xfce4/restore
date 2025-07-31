@@ -6,8 +6,29 @@ xfce4-power-manager xfce4-screensaver xfce4-session xfce4-settings-editor \
 xfce4-settings-manager xfce4-taskmanager xfce4-terminal xfwm4 xsettings"
 
 for channel in $channels; do
-    while read line
-    do
-        xfconf-query -c xsettings -p "$(echo $line | awk '{print $1}')" -s "$(echo $line | awk '{print $2}')" -n
-    done < "$config_file"
+    config_file="$channel.txt"
+    if [ -f "$config_file" ]; then
+        echo "Applying settings from $config_file to channel $channel"
+        while IFS= read -r line; do
+            # Skip empty lines and comments
+            [ -z "$line" ] && continue
+            echo "$line" | grep -qE '^\s*#' && continue
+
+            prop=$(echo "$line" | awk '{print $1}' | xargs)             # strip spaces
+            value=$(echo "$line" | cut -d' ' -f2- | xargs)              # strip spaces
+
+            # Guess the type
+            if echo "$value" | grep -Eq '^(true|false)$'; then
+                vtype="bool"
+            elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
+                vtype="int"
+            else
+                vtype="string"
+            fi
+
+            xfconf-query -c "$channel" -p "$prop" -t "$vtype" -s "$value" -n
+        done < "$config_file"
+    else
+        echo "Config file '$config_file' does not exist."
+    fi
 done
