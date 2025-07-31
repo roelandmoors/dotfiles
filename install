@@ -10,3 +10,4 @@ ln -i -s $(pwd)/gitconfig ~/.gitconfig
 ln -i -s $(pwd)/bash_custom ~/.bash_custom
 ln -i -s $(pwd)/config/nvim/init.lua ~/.config/nvim/
 ln -i -s $(pwd)/config/tmux/tmux.conf ~/.config/tmux/
+ln -i -s $(pwd)/config/user-dirs.dirs ~/.config/
