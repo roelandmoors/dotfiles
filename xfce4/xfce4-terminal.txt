@@ -1,5 +1,5 @@
-/background-darkness            0.620000
-/background-mode                TERMINAL_BACKGROUND_SOLID
+/background-darkness            0.850000
+/background-mode                TERMINAL_BACKGROUND_TRANSPARENT
 /color-background               #000000
 /color-background-vary          false
 /color-bold                     
@@ -15,11 +15,12 @@
 /color-selection-use-default    true
 /color-use-theme                false
 /font-name                      JetBrainsMonoNL Nerd Font Mono 12
-/misc-borders-default           false
+/misc-borders-default           true
 /misc-copy-on-select            true
 /misc-default-geometry          120x40
 /misc-menubar-default           false
 /misc-show-unsafe-paste-dialog  false
+/misc-toolbar-default           false
 /scrolling-bar                  TERMINAL_SCROLLBAR_NONE
 /shortcuts-no-menukey           true
 /tab-activity-color             #aa0000

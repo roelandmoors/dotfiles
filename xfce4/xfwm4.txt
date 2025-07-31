@@ -54,7 +54,7 @@
 /general/snap_to_border                  true
 /general/snap_to_windows                 true
 /general/snap_width                      33
-/general/theme                           Default-xhdpi
+/general/theme                           Default
 /general/tile_on_move                    true
 /general/title_alignment                 center
 /general/title_font                      Sans Bold 9
@@ -67,7 +67,7 @@
 /general/toggle_workspaces               false
 /general/unredirect_overlays             true
 /general/urgent_blink                    false
-/general/use_compositing                 false
+/general/use_compositing                 true
 /general/vblank_mode                     auto
 /general/workspace_count                 4
 /general/workspace_names                 [Workspace 1,Workspace 2,Workspace 3,Workspace 4]

@@ -1,6 +1,13 @@
 #!/bin/sh
 
-#while read line
-#do
-#	xfconf-query -c xfce4-keyboard-shortcuts -p "$(echo $line | awk '{print $1}')" -s "$(echo $line | awk '{print $2}')" -n
-#done < backup.txt
+channels="displays keyboard-layout keyboards pointers ristretto thunar thunar-volman \
+xfce4-appfinder xfce4-desktop xfce4-keyboard-shortcuts xfce4-notifyd xfce4-panel \
+xfce4-power-manager xfce4-screensaver xfce4-session xfce4-settings-editor \
+xfce4-settings-manager xfce4-taskmanager xfce4-terminal xfwm4 xsettings"
+
+for channel in $channels; do
+    while read line
+    do
+        xfconf-query -c xsettings -p "$(echo $line | awk '{print $1}')" -s "$(echo $line | awk '{print $2}')" -n
+    done < "$config_file"
+done

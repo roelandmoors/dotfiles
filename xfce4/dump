@@ -9,8 +9,8 @@ xfconf-query -c thunar-volman -lv > $(pwd)/thunar-volman.txt
 xfconf-query -c xfce4-appfinder -lv > $(pwd)/xfce4-appfinder.txt
 xfconf-query -c xfce4-desktop -lv > $(pwd)/xfce4-desktop.txt
 xfconf-query -c xfce4-keyboard-shortcuts -lv > $(pwd)/xfce4-keyboard-shortcuts.txt
-xfconf-query -c xfce4-notifyd -lv > $(pwd)/xfce4-notifyd.txt
-xfconf-query -c xfce4-panel -lv > $(pwd)/xfce4-panel.txt
+xfconf-query -c xfce4-notifyd -lv | grep -v known > $(pwd)/xfce4-notifyd.txt
+xfconf-query -c xfce4-panel -lv | grep -v known > $(pwd)/xfce4-panel.txt
 xfconf-query -c xfce4-power-manager -lv > $(pwd)/xfce4-power-manager.txt
 xfconf-query -c xfce4-screensaver -lv > $(pwd)/xfce4-screensaver.txt
 xfconf-query -c xfce4-session -lv > $(pwd)/xfce4-session.txt
