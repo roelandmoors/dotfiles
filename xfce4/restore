@@ -15,8 +15,8 @@ for channel in $channels; do
             echo "$line" | grep -qE '^\s*#' && continue
 
             # Extract property and value (value may contain spaces)
-            prop=$(echo "$line" | awk '{print $1}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-            value=$(echo "$line" | cut -d' ' -f2- | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            prop=$(echo "$line" | awk '{print $1}')
+            value=$(echo "$line" | cut -d' ' -f2- | sed 's/^[[:space:]]*//')
 
             # Detect value type
             if echo "$value" | grep -Eq '^(true|false)$'; then
