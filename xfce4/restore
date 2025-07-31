@@ -14,10 +14,11 @@ for channel in $channels; do
             [ -z "$line" ] && continue
             echo "$line" | grep -qE '^\s*#' && continue
 
-            prop=$(echo "$line" | awk '{print $1}' | xargs)             # strip spaces
-            value=$(echo "$line" | cut -d' ' -f2- | xargs)              # strip spaces
+            # Extract property and value (value may contain spaces)
+            prop=$(echo "$line" | awk '{print $1}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            value=$(echo "$line" | cut -d' ' -f2- | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-            # Guess the type
+            # Detect value type
             if echo "$value" | grep -Eq '^(true|false)$'; then
                 vtype="bool"
             elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
