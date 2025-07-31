@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 channels="displays keyboard-layout keyboards pointers ristretto thunar thunar-volman \
 xfce4-appfinder xfce4-desktop xfce4-keyboard-shortcuts xfce4-notifyd xfce4-panel \
@@ -9,25 +9,51 @@ for channel in $channels; do
     config_file="$channel.txt"
     if [ -f "$config_file" ]; then
         echo "Applying settings from $config_file to channel $channel"
-        while IFS= read -r line; do
+        while IFS= read -r line || [ -n "$line" ]; do
             # Skip empty lines and comments
             [ -z "$line" ] && continue
             echo "$line" | grep -qE '^\s*#' && continue
 
-            # Extract property and value (value may contain spaces)
             prop=$(echo "$line" | awk '{print $1}')
             value=$(echo "$line" | cut -d' ' -f2- | sed 's/^[[:space:]]*//')
 
-            # Detect value type
-            if echo "$value" | grep -Eq '^(true|false)$'; then
-                vtype="bool"
-            elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
-                vtype="int"
-            else
-                vtype="string"
-            fi
+            # Check if it's an array (starts with [ and ends with ])
+            if echo "$value" | grep -q '^\[.*\]$'; then
+                # Strip square brackets
+                array_content=$(echo "$value" | sed -e 's/^\[//' -e 's/\]$//')
+                IFS=',' read -r -a elements <<< "$array_content"
 
-            xfconf-query -c "$channel" -p "$prop" -t "$vtype" -s "$value" -n
+                # Prepare type flags and values
+                args=()
+                for element in "${elements[@]}"; do
+                    element=$(echo "$element" | xargs)  # trim
+                    if echo "$element" | grep -Eq '^(true|false)$'; then
+                        vtype="bool"
+                    elif echo "$element" | grep -Eq '^-?[0-9]+$'; then
+                        vtype="int"
+                    elif echo "$element" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
+                        vtype="double"
+                    else
+                        vtype="string"
+                    fi
+                    args+=("-t" "$vtype" "-s" "$element")
+                done
+
+                xfconf-query -c "$channel" -p "$prop" -a -n "${args[@]}"
+            else
+                # Single value detection
+                if echo "$value" | grep -Eq '^(true|false)$'; then
+                    vtype="bool"
+                elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
+                    vtype="int"
+                elif echo "$element" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
+                    vtype="double"
+                else
+                    vtype="string"
+                fi
+
+                xfconf-query -c "$channel" -p "$prop" -t "$vtype" -s "$value" -n
+            fi
         done < "$config_file"
     else
         echo "Config file '$config_file' does not exist."
