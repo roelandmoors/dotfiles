@@ -1,0 +1,8 @@
+# add ". ~/.bash_custom" to your ~/.bashrc
+
+export BUNDLE_PATH=~/.gems
+alias vi="nvim"
+alias lg="lazygit"
+alias fd="fdfind"
+export PATH=$HOME/.local/bin:$PATH
+eval "$(fzf --bash)"
