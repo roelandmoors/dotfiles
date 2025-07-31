@@ -46,7 +46,7 @@ for channel in $channels; do
                     vtype="bool"
                 elif echo "$value" | grep -Eq '^-?[0-9]+$'; then
                     vtype="int"
-                elif echo "$element" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
+                elif echo "$value" | grep -Eq '^-?[0-9]*\.[0-9]+$'; then
                     vtype="double"
                 else
                     vtype="string"
