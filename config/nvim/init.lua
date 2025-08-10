@@ -1,3 +1,20 @@
+-- plugins
+vim.pack.add({
+    { src = "https://github.com/eemed/sitruuna.vim" },
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/mason-org/mason.nvim" },
+    {
+        src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+        version = vim.version.range('3')
+    },
+    { src = "https://github.com/ibhagwan/fzf-lua" },
+    -- dependencies
+    { src = "https://github.com/nvim-lua/plenary.nvim" },
+    { src = "https://github.com/MunifTanjim/nui.nvim" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+})
+
+-- settings
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -47,22 +64,6 @@ augroup END
 -- show diagnostics on request
 vim.diagnostic.config({ virtual_text = false }) -- this is the default now
 vim.keymap.set('n', '<leader>ds', vim.diagnostic.open_float, { desc = 'Show diagnostics in float' })
-
--- plugins
-vim.pack.add({
-    { src = "https://github.com/eemed/sitruuna.vim" },
-    { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/mason-org/mason.nvim" },
-    {
-        src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
-        version = vim.version.range('3')
-    },
-    { src = "https://github.com/ibhagwan/fzf-lua" },
-    -- dependencies
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/MunifTanjim/nui.nvim" },
-    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-})
 
 require("mason").setup()
 require("neo-tree").setup()
