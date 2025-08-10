@@ -1,9 +1,0 @@
-/xfce4-power-manager/brightness-switch                  0
-/xfce4-power-manager/brightness-switch-restore-on-exit  1
-/xfce4-power-manager/dpms-on-battery-off                20
-/xfce4-power-manager/dpms-on-battery-sleep              15
-/xfce4-power-manager/lid-action-on-ac                   0
-/xfce4-power-manager/lid-action-on-battery              0
-/xfce4-power-manager/lock-screen-suspend-hibernate      false
-/xfce4-power-manager/power-button-action                3
-/xfce4-power-manager/show-tray-icon                     false
