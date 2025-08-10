@@ -22,3 +22,6 @@ mkdir -p ~/.config/hypr
 ln -i -s $(pwd)/config/hypr/autostart.conf ~/.config/hypr/
 ln -i -s $(pwd)/config/hypr/input.conf ~/.config/hypr/
 ln -i -s $(pwd)/config/hypr/monitors.conf ~/.config/hypr/
+
+mkdir -p ~/.config/mc
+cp $(pwd)/config/mc/ini ~/.config/mc/
